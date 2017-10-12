@@ -42,33 +42,56 @@ void main() {
 	int digit3;
 
 	//ask for variable
-
-	cout << "Give me a three digit number!" << endl;
 	
-	// take in variable
+		cout << "Give me a three digit number!" << endl;
 
-	cin >> userNumber;
+		// take in variable
 
+		cin >> userNumber;
 
-	// seperate number to 3 digits;
+		// seperate number to 3 digits;
 
-	digit1 = userNumber / 100; //int division
-	digit2 = userNumber % 100;
-	digit2 = digit2 / 10;
-	digit3 = userNumber % 10;
+		digit1 = userNumber / 100; //int division
+		digit2 = (userNumber / 10) % 10;
+		digit3 = userNumber % 10;
 
-	// display
-	cout << "The first digit is " << digit1 << " and the second digit is " << digit2 << " and the last digit is " << digit3 << endl;
-	//calculate ascending descending or neither:
-	if (digit1 > digit2 && digit2 > digit1) {
-		cout << "Your number is descending!" << endl;
-	}
-	else if (digit1 < digit2 && digit2 < digit3) {
-		cout << "Your number is ascending!" << endl;
-	}
-	else {
-		cout << "Your number is neither ascending or descending." << endl;
-	}
+		// removed section because it was unnecessary 
+		//calculate ascending descending or neither:
 
+		if (digit1 > digit2 && digit2 > digit3) {
+			cout << "Your number is descending!" << endl;
+		}
+		else if (digit1 < digit2 && digit2 < digit3) {
+			cout << "Your number is ascending!" << endl;
+		}
+		else {
+			cout << "Your number is neither ascending nor descending." << endl;
+		}
+
+		for (int i = 1; i < 30; i++) {
+
+			cout << "Give me a three digit number!" << endl;
+
+			// take in variable
+
+			cin >> userNumber;
+
+			digit1 = userNumber / 100; //int division
+			digit2 = (userNumber / 10) % 10;
+			digit3 = userNumber % 10;
+
+			// removed section because it was unnecessary 
+			//calculate ascending descending or neither:
+			if (digit1 > digit2 && digit2 > digit3) {
+				cout << "Your number is descending!" << endl;
+			}
+			else if (digit1 < digit2 && digit2 < digit3) {
+				cout << "Your number is ascending!" << endl;
+			}
+			else {
+				cout << "Your number is neither ascending nor descending." << endl;
+			}
+		}
+	
 	pause(); // pauses to see the displayed text
 }
