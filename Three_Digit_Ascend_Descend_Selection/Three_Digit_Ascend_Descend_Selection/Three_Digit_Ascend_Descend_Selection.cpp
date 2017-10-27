@@ -1,16 +1,16 @@
 /*
 
-Sam Bryant & Dorothy Bui - 10/5/17 - 2
+Nikhil Goyle - 10/5/17 2
 
-Assignment Name : Three digit Ascend Descend Selection
+Program Problem 3 : *
 
-Take in 3 digits from the user, seperate those digits and say whether they ascend descend or neither.
+Determine whether a number is ascending or descending
 
 */
 
 // Libraries
 
-#include <iostream>// gives access to cin, cout, endl, <<, >>, boolalpha, noboolalpha
+#include <iostream> // gives access to cin, cout, endl, <<, >>, boolalpha, noboolalpha
 
 #include <conio.h> // gives access to _kbhit() and _getch() for pause()
 
@@ -24,6 +24,8 @@ void pause() {
 
 	cout << "Press any key to continue . . .";
 
+
+
 	while (!_kbhit());
 
 	_getch();
@@ -35,40 +37,32 @@ void pause() {
 
 void main() {
 
-	//define variables:
-	int userNumber;
-	int digit1;
-	int digit2;
-	int digit3;
+	int x;
+	int A;
+	int B;
+	int C;
 
-	//ask for variable
+	for (int i = 30; i < 30; i++) {
+		cout << "Give me a 3-digit number: " << endl;
+			cin >> x;
 
-	cout << "Give me a three digit number!" << endl;
-	
-	// take in variable
+			C = x % 10;
+			B = (x / 10) % 10;
+			A = (x / 100);
 
-	cin >> userNumber;
+			if (A > B && B > C) {
+				cout << x << " is descending" << endl;
+			}
 
+			else if (C > B && B > A) {
+				cout << x << " is ascending" << endl;
+			}
 
-	// seperate number to 3 digits;
+			else {
 
-	digit1 = userNumber / 100; //int division
-	digit2 = userNumber % 100;
-	digit2 = digit2 / 10;
-	digit3 = userNumber % 10;
+				cout << x << " is neither ascending or descending" << endl;
+			}
 
-	// display
-	cout << "The first digit is " << digit1 << " and the second digit is " << digit2 << " and the last digit is " << digit3 << endl;
-	//calculate ascending descending or neither:
-	if (digit1 > digit2 && digit2 > digit1) {
-		cout << "Your number is descending!" << endl;
 	}
-	else if (digit1 < digit2 && digit2 < digit3) {
-		cout << "Your number is ascending!" << endl;
-	}
-	else {
-		cout << "Your number is neither ascending or descending." << endl;
-	}
-
 	pause(); // pauses to see the displayed text
 }
